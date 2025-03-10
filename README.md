@@ -1,6 +1,8 @@
 # LANGUAGE_Odin
 Manifesto da Linguagem Odin
 
+
+
 ## Introdução
 Odin é uma linguagem de programação compilada, projetada para fornecer uma combinação única de eficiência, segurança e legibilidade. Inspirada pela precisão e potência do Rust e pela clareza do Python, Odin foi criada para desenvolvedores que exigem alto desempenho e controle sobre os recursos do sistema, ao mesmo tempo que apreciam uma sintaxe concisa e intuitiva.
 
@@ -33,13 +35,15 @@ Odin será reconhecida como a escolha ideal para desenvolvedores que buscam uma 
 
 
 ## Dependências (Fedora)
-sudo dnf install llvm llvm-devel clang
-sudo dnf install rust cargo
+- sudo dnf install llvm llvm-devel clang
+- sudo dnf install rust cargo
+- sudo dnf install libffi-devel
+- sudo dnf install zlib-devel libxml2-devel
+
 
 ## Compile a integração
-cd llvm
 cargo build --release
 
 ## Compile o Compilador Odin
-cd ..
+cd odin
 odin src/main.odin

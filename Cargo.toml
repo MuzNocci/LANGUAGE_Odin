@@ -1,0 +1,8 @@
+[package]
+name = "odin-compiler"
+version = "0.1.0"
+authors = ["Müller Nocciolli <muller.nocciolli@gmail.com>"]
+edition = "2021"
+
+[dependencies]
+llvm-sys = "191.0.0-rc1"
