@@ -1,5 +1,7 @@
 use super::token::{Token, TokenType, lookup_identifier};
 
+
+
 pub struct Lexer {
     input: Vec<char>,
     position: usize,      // posição atual no input (aponta para o char atual)
