@@ -1,78 +1,87 @@
-# Odin Compiler
+# Odin Programming Language
 
-Odin Compiler é um compilador para a linguagem Odin, desenvolvido em Rust.
+Odin is a programming language that can be interpreted or compiled. It is designed to be simple, fast, and efficient. This repository contains the source code for the Odin compiler and interpreter.
 
-## Estrutura do Projeto
+## Project Structure
 
 ```plaintext
 odin/
-├── Cargo.toml                        # Configuração do projeto Rust
+├── Cargo.toml                        # Rust project configuration
 ├── src/
-│   ├── main.rs                       # Ponto de entrada do compilador/interpretador
+│   ├── main.rs                       # Entry point of the compiler/interpreter
 │   ├── lexer/
-│   │   ├── mod.rs                    # Definições do módulo lexer
-│   │   ├── token.rs                  # Definições de tokens
-│   │   └── lexer.rs                  # Analisador léxico
+│   │   ├── mod.rs                    # Lexer module definitions
+│   │   ├── token.rs                  # Token definitions
+│   │   └── lexer.rs                  # Lexical analyzer
 │   ├── parser/
-│   │   ├── mod.rs                    # Definições do módulo parser
-│   │   ├── ast.rs                    # Árvore de sintaxe abstrata
-│   │   └── parser.rs                 # Analisador sintático
+│   │   ├── mod.rs                    # Parser module definitions
+│   │   ├── ast.rs                     # Abstract Syntax Tree (AST)
+│   │   └── parser.rs                 # Syntax analyzer
 │   ├── interpreter/
-│   │   ├── mod.rs                    # Definições do módulo interpreter
-│   │   ├── environment.rs            # Ambiente de execução
-│   │   ├── evaluator.rs              # Avaliador de expressões
-│   │   └── object.rs                 # Representação de objetos
+│   │   ├── mod.rs                    # Interpreter module definitions
+│   │   ├── environment.rs            # Execution environment
+│   │   ├── evaluator.rs              # Expression evaluator
+│   │   └── object.rs                 # Object representation
 │   ├── compiler/
-│   │   ├── mod.rs                    # Definições do módulo compiler
-│   │   ├── bytecode.rs               # Definição do bytecode
-│   │   └── compiler.rs               # Compilador
+│   │   ├── mod.rs                    # Compiler module definitions
+│   │   ├── bytecode.rs               # Bytecode definition
+│   │   └── compiler.rs               # Compiler
 │   ├── vm/
-│   │   ├── mod.rs                    # Definições do módulo vm
-│   │   └── vm.rs                     # Máquina virtual
+│   │   ├── mod.rs                    # Virtual Machine (VM) module definitions
+│   │   └── vm.rs                     # Virtual Machine
 │   ├── stdlib/
-│   │   ├── mod.rs                    # Definições do módulo stdlib
-│   │   ├── math.rs                   # Funções matemáticas
-│   │   ├── io.rs                     # Funções de entrada/saída
-│   │   └── string.rs                 # Funções de manipulação de strings
+│   │   ├── mod.rs                    # Standard library module definitions
+│   │   ├── math.rs                   # Mathematical functions
+│   │   ├── io.rs                     # Input/output functions
+│   │   └── string.rs                 # String manipulation functions
 │   └── repl/
-│       ├── mod.rs                    # Definições do módulo repl
-│       └── repl.rs                   # REPL (Read-Eval-Print Loop)
-├── examples/                         # Exemplos de código na linguagem Odin
-│   ├── hello_world.odin              # Exemplo básico "Hello World"
-│   ├── fibonacci.odin                # Implementação de Fibonacci
-│   └── classes.odin                  # Exemplo de classes e objetos
-└── tests/                            # Testes para o compilador/interpretador
-    ├── lexer_tests.rs                # Testes para o lexer
-    ├── parser_tests.rs               # Testes para o parser
-    └── integration_tests.rs          # Testes de integração
+│       ├── mod.rs                    # REPL module definitions
+│       └── repl.rs                   # Read-Eval-Print Loop (REPL)
+├── examples/                         # Example Odin programs
+│   ├── hello_world.odin              # Basic "Hello World" example
+│   ├── fibonacci.odin                # Fibonacci implementation
+│   └── classes.odin                  # Example of classes and objects
+└── tests/                            # Tests for the compiler/interpreter
+    ├── lexer_tests.rs                # Tests for the lexer
+    ├── parser_tests.rs               # Tests for the parser
+    └── integration_tests.rs          # Integration tests
 ```
 
-## Instalação
+## Features
 
-Para compilar e rodar o Odin Compiler, certifique-se de ter o Rust instalado. Em seguida, clone o repositório e execute:
+- **Lexical Analysis**: Tokenizes the source code.
+- **Parsing**: Converts tokenized code into an Abstract Syntax Tree (AST).
+- **Interpreter**: Evaluates Odin code directly.
+- **Compiler**: Compiles Odin code to an intermediate representation (bytecode).
+- **Virtual Machine**: Executes the compiled bytecode.
+- **Standard Library**: Provides built-in utilities for math, I/O, and string handling.
+- **REPL**: Allows interactive execution of Odin code.
 
+## Getting Started
+
+### Prerequisites
+- Rust installed (latest stable version recommended)
+
+### Build and Run
 ```sh
-cargo build
-```
+# Clone the repository
+git clone https://github.com/your-repo/odin-lang.git
+cd odin-lang
 
-## Uso
+# Build the project
+cargo build --release
 
-Para executar o compilador com um arquivo Odin:
-
-```sh
+# Run the interpreter
 cargo run -- examples/hello_world.odin
 ```
 
-## Contribuição
+### Running Tests
+```sh
+cargo test
+```
 
-Contribuições são bem-vindas! Siga as diretrizes abaixo:
+## Contributing
+Contributions are welcome! Feel free to open issues or submit pull requests.
 
-1. Faça um fork do repositório.
-2. Crie uma branch para sua feature (`git checkout -b minha-feature`).
-3. Faça commit das mudanças (`git commit -m 'Minha nova feature'`).
-4. Faça push para a branch (`git push origin minha-feature`).
-5. Abra um Pull Request.
-
-## Licença
-
-Este projeto está sob a licença MIT. Para mais detalhes, consulte o arquivo `LICENSE`.
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
