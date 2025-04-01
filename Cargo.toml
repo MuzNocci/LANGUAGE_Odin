@@ -1,0 +1,32 @@
+[package]
+name = "odin"
+version = "0.1.1"
+edition = "2021"
+authors = ["Müller Nocciolli <muller@nocciolli.com.br>"]
+description = "Odin Programming Language - Uma linguagem inspirada em Python implementada em Rust"
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/MuzNocci/LANGUAGE_Odin"
+
+[dependencies]
+clap = { version = "4.4", features = ["derive"] }  # Para processamento de argumentos de linha de comando
+rustyline = "12.0"                                # Para REPL interativo
+anyhow = "1.0"                                    # Para manipulação de erros
+thiserror = "1.0"                                 # Para criação de erros personalizados
+logos = "0.13"                                    # Para análise léxica
+rustpython-parser = "0.2"                         # Inspiração para o parser inspirado em Python
+lazy_static = "1.4"                               # Para objetos estáticos inicializados preguiçosamente
+
+[dev-dependencies]
+pretty_assertions = "1.4"                         # Para assertions mais descritivas em testes
+criterion = "0.5"                                 # Para benchmarking
+
+[[bin]]
+name = "odin"
+path = "src/main.rs"
+
+[profile.release]
+lto = true          # Link-time optimization
+codegen-units = 1   # Mais otimizações do compilador
+opt-level = 3       # Nível máximo de otimização
+debug = false       # Sem símbolos de debug
